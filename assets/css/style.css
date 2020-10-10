@@ -126,14 +126,14 @@ footer {
 	font-size: 14px;
     line-height: 32px;
     color: #fff;
-    text-align: left;
+    text-align: center;
 }
 
 .footer-copyright a { color: #fff; border-bottom: 1px dotted #fff; }
 .footer-copyright a:hover { color: #fff; border: 0; }
 
 .footer-social {
-	text-align: right;
+	text-align: center;
 }
 
 /* social icons */
