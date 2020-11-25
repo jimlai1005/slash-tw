@@ -44,9 +44,6 @@ jQuery(document).ready(function() {
 	        data: '{\"email\":\"' + $('.subscribe-email').val().trim() + '\"}',
 	        dataType: 'text',
 	        success: function(json) {
-	        	alert(json.errorCode);
-	        	alert(json.errorMessage);
-
 	            if(json.errorCode == 0) {
 	                $('.success-message').hide();
 	                $('.error-message').hide();
