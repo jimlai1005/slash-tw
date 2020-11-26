@@ -45,7 +45,8 @@ jQuery(document).ready(function() {
 	        data: '{\"email\":\"' + $('.subscribe-email').val().trim() + '\"}',
 	        dataType: 'json',
 	        success: function(json) {
-	            if(json.errorCode == 0) {
+	        	jsonBody = jQuery.parseJSON(json.body);
+	            if(jsonBody.errorCode == 0) {
 	                $('.success-message').hide();
 	                $('.error-message').hide();
 	                $('.error-message').html("Subscribe Successfully!");
@@ -55,7 +56,7 @@ jQuery(document).ready(function() {
 	                $('.error-message').hide();
 	                $('.success-message').hide();
 	                $('.subscribe form').hide();
-	                $('.success-message').html(json.errorMessage);
+	                $('.success-message').html(jsonBody.errorMessage);
 	                $('.success-message').fadeIn();
 	            }
 	        }
