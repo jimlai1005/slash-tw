@@ -40,14 +40,15 @@ jQuery(document).ready(function() {
 	    var postdata = $('.subscribe form').serialize();
 	    $.ajax({
 	        type: 'POST',
+	        contentType: 'application/json',
 	        url: 'https://kxee399lb7.execute-api.ap-southeast-1.amazonaws.com/stg/subscription',
 	        data: '{\"email\":\"' + $('.subscribe-email').val().trim() + '\"}',
-	        dataType: 'text',
+	        dataType: 'json',
 	        success: function(json) {
 	            if(json.errorCode == 0) {
 	                $('.success-message').hide();
 	                $('.error-message').hide();
-	                $('.error-message').html(json.errorMessage);
+	                $('.error-message').html("Subscribe Successfully!");
 	                $('.error-message').fadeIn();
 	            }
 	            else {
